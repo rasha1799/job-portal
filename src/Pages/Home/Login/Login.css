@@ -1,0 +1,9 @@
+.login-form {
+  background-color: wheat;
+}
+.font {
+  background-color: rgb(236, 138, 9);
+}
+.login-form form input[type] {
+  width: 70%;
+}
