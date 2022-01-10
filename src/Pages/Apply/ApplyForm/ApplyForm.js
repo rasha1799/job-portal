@@ -2,11 +2,17 @@ import React, { useState } from "react";
 import { Button, Input, TextField } from "@mui/material";
 
 const ApplyForm = (props) => {
+  console.log(props.details);
+  const { job_title, _id, vaccancy } = props.details;
   const [name, setName] = useState("");
-  const [namePost, setNamePost] = useState("");
+
   const [email, setEmail] = useState("");
   const [file, setfile] = useState(null);
   const [success, setSuccess] = useState(false);
+  const status = "Pending";
+  const vaccancys = vaccancy;
+  const namePost = job_title;
+  const id = _id;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,6 +22,9 @@ const ApplyForm = (props) => {
     const formData = new FormData();
 
     formData.append("name", name);
+    formData.append("job_id", id);
+    formData.append("vaccancy", vaccancys);
+    formData.append("status", status);
     formData.append("namePost", namePost);
 
     formData.append("email", email);
@@ -28,7 +37,6 @@ const ApplyForm = (props) => {
       .then((data) => {
         if (data.insertedId) {
           setSuccess("Applied successfully");
-          console.log("Applied successfully");
         }
       })
       .catch((error) => {
@@ -40,13 +48,6 @@ const ApplyForm = (props) => {
       {" "}
       <h3>Apply Now</h3>
       <form onSubmit={handleSubmit}>
-        <TextField
-          sx={{ width: "50%" }}
-          onChange={(e) => setNamePost(e.target.value)}
-          label="Post Name"
-          variant="standard"
-        />
-        <br />
         <TextField
           sx={{ width: "50%" }}
           label="Name"

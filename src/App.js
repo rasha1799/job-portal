@@ -7,6 +7,7 @@ import Login from "./Pages/Home/Login/Login";
 import Register from "./Pages/Home/Register/Register";
 import PrivateRoute from "./Pages/Home/Login/PrivateRoute";
 import AuthProvider from "./Contexts/AuthProvider";
+import Applications from "./Pages/Applications/Applications";
 
 function App() {
   return (
@@ -28,6 +29,9 @@ function App() {
             <Route path="/register">
               <Register></Register>
             </Route>
+            <PrivateRoute path="/applications">
+              <Applications></Applications>
+            </PrivateRoute>
 
             <PrivateRoute path="/apply/:_id">
               <Apply></Apply>

@@ -6,12 +6,12 @@ const Header = () => {
     <div style={{ marginBottom: "100px" }}>
       <Navbar bg="primary" fixed="top" expand="lg" variant="dark">
         <Container>
-          <Navbar.Brand href="#home">Best Jobs</Navbar.Brand>
+          <Navbar.Brand href="/home">Best Jobs</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
+              <Nav.Link href="/applications">Applications</Nav.Link>
               <NavDropdown title="Dashboard" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Profile</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">

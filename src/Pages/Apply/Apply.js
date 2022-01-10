@@ -39,7 +39,7 @@ const Apply = () => {
         </Row>
       </Container>
       <div style={{ marginBottom: "50px" }}>
-        <ApplyForm job={details}></ApplyForm>
+        <ApplyForm details={details}></ApplyForm>
       </div>
     </div>
   );

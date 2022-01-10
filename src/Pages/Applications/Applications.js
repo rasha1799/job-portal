@@ -1,27 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { Container, Grid } from "@mui/material";
+
 import Application from "./Application/Application";
 
 const Applications = () => {
   const [applications, setapplications] = useState([]);
-
+  const [updated, setUpdated] = useState(null);
   useEffect(() => {
-    fetch("https://stark-caverns-04377.herokuapp.com/applications")
+    fetch("http://localhost:5000/applications")
       .then((res) => res.json())
       .then((data) => setapplications(data));
-  }, []);
+  }, [updated]);
   return (
-    <div>
-      <Container>
-        <Grid container spacing={2}>
-          {applications.map((application) => (
-            <Application
-              key={application._id}
-              application={application}
-            ></Application>
-          ))}
-        </Grid>
-      </Container>
+    <div className="mt-4">
+      {applications.map((application) => (
+        <Application
+          key={application._id}
+          application={application}
+          updated={setUpdated}
+        ></Application>
+      ))}
     </div>
   );
 };
